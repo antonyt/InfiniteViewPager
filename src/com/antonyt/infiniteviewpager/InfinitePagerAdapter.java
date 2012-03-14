@@ -4,6 +4,7 @@ import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * A PagerAdapter that wraps around another PagerAdapter to handle paging
@@ -36,7 +37,7 @@ public class InfinitePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(View container, int position) {
+    public Object instantiateItem(ViewGroup container, int position) {
 	int virtualPosition = position % getRealCount();
 	debug("instantiateItem: real position: " + position);
 	debug("instantiateItem: virtual position: " + virtualPosition);
@@ -46,7 +47,7 @@ public class InfinitePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(View container, int position, Object object) {
+    public void destroyItem(ViewGroup container, int position, Object object) {
 	int virtualPosition = position % getRealCount();
 	debug("destroyItem: real position: " + position);
 	debug("destroyItem: virtual position: " + virtualPosition);
@@ -60,7 +61,7 @@ public class InfinitePagerAdapter extends PagerAdapter {
      */
 
     @Override
-    public void finishUpdate(View container) {
+    public void finishUpdate(ViewGroup container) {
 	adapter.finishUpdate(container);
     }
 
@@ -80,7 +81,7 @@ public class InfinitePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void startUpdate(View container) {
+    public void startUpdate(ViewGroup container) {
 	adapter.startUpdate(container);
     }
 
