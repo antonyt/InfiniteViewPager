@@ -36,4 +36,10 @@ public class ColourFragment extends Fragment {
 	v.setText("Fragment ID: " + identifier);
 	return v;
     }
+    
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("dummy", true);
+    }
 }
