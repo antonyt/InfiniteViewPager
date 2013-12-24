@@ -1,5 +1,13 @@
-bin
-gen
-.project
+bin/
+gen/
+.settings
+target/
+build/
+local.properties
+.gradle
+*.iml
+.idea
 .classpath
-target
+.project
+
+*.DS_Store
