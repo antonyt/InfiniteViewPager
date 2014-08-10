@@ -35,6 +35,20 @@ public class InfiniteViewPager extends ViewPager {
 
     }
 
+    @Override
+    public int getCurrentItem() {
+        int position = super.getCurrentItem();
+
+        if (getAdapter() instanceof InfinitePagerAdapter) {
+            InfinitePagerAdapter infAdapter = (InfinitePagerAdapter) getAdapter();
+
+            // Return the actual item position in the data backing InfinitePagerAdapter
+            return (position % infAdapter.getRealCount());
+        } else {
+            return super.getCurrentItem();
+        }
+    }
+
     private int getOffsetAmount() {
         if (getAdapter() instanceof InfinitePagerAdapter) {
             InfinitePagerAdapter infAdapter = (InfinitePagerAdapter) getAdapter();
