@@ -32,16 +32,13 @@ public class InfiniteViewPager extends ViewPager {
         // offset the current item to ensure there is space to scroll
         item = getOffsetAmount() + (item % getAdapter().getCount());
         super.setCurrentItem(item);
-
     }
 
     @Override
     public int getCurrentItem() {
         int position = super.getCurrentItem();
-
         if (getAdapter() instanceof InfinitePagerAdapter) {
             InfinitePagerAdapter infAdapter = (InfinitePagerAdapter) getAdapter();
-
             // Return the actual item position in the data backing InfinitePagerAdapter
             return (position % infAdapter.getRealCount());
         } else {
@@ -61,5 +58,4 @@ public class InfiniteViewPager extends ViewPager {
             return 0;
         }
     }
-
 }
