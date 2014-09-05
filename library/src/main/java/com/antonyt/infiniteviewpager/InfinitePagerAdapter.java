@@ -83,6 +83,12 @@ public class InfinitePagerAdapter extends PagerAdapter {
         adapter.startUpdate(container);
     }
 
+    @Override
+    public CharSequence getPageTitle(int position) {
+        int virtualPosition = position % getRealCount();
+        return adapter.getPageTitle(virtualPosition);
+    }
+
     /*
      * End delegation
      */
