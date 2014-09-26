@@ -7,14 +7,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
-import com.example.circularpageview.R;
-
+/**
+ * Sample for {@link com.antonyt.infiniteviewpager.MinFragmentPagerAdapter} (support for less than
+ * 4 pages). Duplicate instances of pages will be created to fulfill the min case.
+ */
 public class InfiniteViewPager2Activity extends FragmentActivity {
 
-    private static final String TAG = "InfinitePagerAdapter";
-    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,14 +36,13 @@ public class InfiniteViewPager2Activity extends FragmentActivity {
                 fragment.setArguments(args);
                 return fragment;
             }
-            
+
         };
 
-
         // wrap pager to provide a minimum of 4 pages
-    	MinFragmentPagerAdapter wrappedMinAdapter = new MinFragmentPagerAdapter(getSupportFragmentManager());
-    	wrappedMinAdapter.setAdapter(adapter);
-    	
+        MinFragmentPagerAdapter wrappedMinAdapter = new MinFragmentPagerAdapter(getSupportFragmentManager());
+        wrappedMinAdapter.setAdapter(adapter);
+
         // wrap pager to provide infinite paging with wrap-around
         PagerAdapter wrappedAdapter = new InfinitePagerAdapter(wrappedMinAdapter);
 
