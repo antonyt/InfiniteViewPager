@@ -35,12 +35,19 @@ public class InfiniteViewPager extends ViewPager {
 
     @Override
     public void setCurrentItem(int item, boolean smoothScroll) {
+        if (getAdapter().getCount() == 0) {
+            super.setCurrentItem(item, smoothScroll);
+            return;
+        }
         item = getOffsetAmount() + (item % getAdapter().getCount());
         super.setCurrentItem(item, smoothScroll);
     }
 
     @Override
     public int getCurrentItem() {
+        if (getAdapter().getCount() == 0) {
+            return super.getCurrentItem();
+        }
         int position = super.getCurrentItem();
         if (getAdapter() instanceof InfinitePagerAdapter) {
             InfinitePagerAdapter infAdapter = (InfinitePagerAdapter) getAdapter();
@@ -52,6 +59,9 @@ public class InfiniteViewPager extends ViewPager {
     }
 
     private int getOffsetAmount() {
+        if (getAdapter().getCount() == 0) {
+            return 0;
+        }
         if (getAdapter() instanceof InfinitePagerAdapter) {
             InfinitePagerAdapter infAdapter = (InfinitePagerAdapter) getAdapter();
             // allow for 100 back cycles from the beginning
