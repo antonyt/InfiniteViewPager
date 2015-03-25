@@ -23,6 +23,29 @@ Wrap your existing `PagerAdapter` with the `InfinitePagerAdapter`:
 	viewPager.setAdapter(wrappedAdapter);
 	...
 
+
+### Gradle build
+
+To install the demo application to your device run the following task:
+
+```
+$ ./gradlew installDebug
+```
+
+To deploy the library to your local Maven repository run the following task:
+
+```
+$ ./gradlew install
+```
+
+Then, to use the library in your project add the following to your `build.gradle`:
+
+```groovy
+dependencies {
+    compile 'com.antonyt.infiniteviewpager:library:1.0.0'
+}
+```
+
 Wrapped scrolling should now be possible with your `ViewPager`. The pages you see are not duplicates - each page from your `PagerAdapter` is only created once and then reused. This means you do not have to worry about managing multiple instances of the same `Fragment`.
 
 ## Caveats
