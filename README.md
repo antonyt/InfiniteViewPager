@@ -9,19 +9,19 @@ With a normal ViewPager, you can only scroll from the first page to second page 
 ## Solution
 Use the `InfiniteViewPager` in your Activity/Fragment layout:
 	
-	...
-	<com.antonyt.infiniteviewpager.InfiniteViewPager
-		android:id="@+id/pager"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent" />
-	...
+``` xml
+<com.antonyt.infiniteviewpager.InfiniteViewPager
+	android:id="@+id/pager"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" />
+```
 
 Wrap your existing `PagerAdapter` with the `InfinitePagerAdapter`:
 
-	...
-	PagerAdapter wrappedAdapter = new InfinitePagerAdapter(adapter);
-	viewPager.setAdapter(wrappedAdapter);
-	...
+``` java
+PagerAdapter wrappedAdapter = new InfinitePagerAdapter(adapter);
+viewPager.setAdapter(wrappedAdapter);
+```
 
 
 ### Gradle build
