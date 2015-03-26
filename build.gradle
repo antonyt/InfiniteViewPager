@@ -4,5 +4,10 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.12.2'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
     }
+}
+
+allprojects {
+	version = VERSION_NAME
 }
