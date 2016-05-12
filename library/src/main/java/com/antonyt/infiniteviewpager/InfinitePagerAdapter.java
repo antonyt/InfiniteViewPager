@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public class InfinitePagerAdapter extends PagerAdapter {
 
     private static final String TAG = "InfinitePagerAdapter";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
 
     private PagerAdapter adapter;
 
