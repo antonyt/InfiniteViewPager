@@ -42,7 +42,7 @@ Then, to use the library in your project add the following to your `build.gradle
 
 ```groovy
 dependencies {
-    compile 'com.antonyt.infiniteviewpager:library:1.0.0'
+    compile 'com.github.antonyt:InfiniteViewPager:v1.0.0'
 }
 ```
 
