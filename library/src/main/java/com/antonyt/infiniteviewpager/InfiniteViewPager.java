@@ -39,7 +39,9 @@ public class InfiniteViewPager extends ViewPager {
             super.setCurrentItem(item, smoothScroll);
             return;
         }
-        item = getOffsetAmount() + (item % getAdapter().getCount());
+        // offset only for the first time
+        if (item < getOffsetAmount())
+            item = getOffsetAmount() + (item % getAdapter().getCount());
         super.setCurrentItem(item, smoothScroll);
     }
 
