@@ -60,7 +60,6 @@ public class InfiniteViewPager extends ViewPager {
         }
     }
 
-    @Override
     public int getInfCurrentItem() {
     	return super.getCurrentItem();
     }
