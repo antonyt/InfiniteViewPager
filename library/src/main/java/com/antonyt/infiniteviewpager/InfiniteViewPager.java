@@ -60,6 +60,11 @@ public class InfiniteViewPager extends ViewPager {
         }
     }
 
+    @Override
+    public int getInfCurrentItem() {
+    	return super.getCurrentItem();
+    }
+
     private int getOffsetAmount() {
         if (getAdapter().getCount() == 0) {
             return 0;
