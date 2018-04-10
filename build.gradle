@@ -1,13 +1,20 @@
 buildscript {
     repositories {
         mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.2'
-        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
-	version = VERSION_NAME
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+
+    version = VERSION_NAME
 }
