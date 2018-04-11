@@ -132,4 +132,6 @@ public class InfinitePagerAdapter extends PagerAdapter {
             Log.d(TAG, message);
         }
     }
+
+    public PagerAdapter getAdapter() { return this.adapter; }
 }

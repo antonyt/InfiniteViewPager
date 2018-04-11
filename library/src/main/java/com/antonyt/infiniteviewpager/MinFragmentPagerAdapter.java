@@ -58,6 +58,6 @@ public class MinFragmentPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
-
+    public FragmentPagerAdapter getAdapter() { return this.adapter; }
 
 }
