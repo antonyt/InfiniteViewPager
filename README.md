@@ -24,25 +24,23 @@ viewPager.setAdapter(wrappedAdapter);
 ```
 
 
-### Gradle build
+### Installation
 
-To install the demo application to your device run the following task:
-
-```
-$ ./gradlew installDebug
-```
-
-To deploy the library to your local Maven repository run the following task:
-
-```
-$ ./gradlew install
-```
-
-Then, to use the library in your project add the following to your `build.gradle`:
+To use the library in your project add the following to your project `build.gradle`:
 
 ```groovy
 dependencies {
-    compile 'com.antonyt.infiniteviewpager:library:1.0.0'
+    compile 'com.github.antonyt:InfiniteViewPager:v1.0.0'
+}
+```
+
+And add JitPack repository into your root `build.gradle`:
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
 }
 ```
 
